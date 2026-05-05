@@ -2,10 +2,12 @@ const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 const ErrorController = require("./controllers/error");
 
-const MONGO_URI = "mongodb://localhost:27017/airbab";
-const PORT = 3000;
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017";
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
